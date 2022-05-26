@@ -1,4 +1,4 @@
-function showRuntime(date) {
+function showRuntime(date, elementId) {
     let createTime = new Date(date);
     let today = new Date();
     let diffTime = today.getTime() - createTime.getTime();
@@ -24,6 +24,6 @@ function showRuntime(date) {
     if (String(diffSeconds).length == 1) {
         diffSeconds = "0" + diffSeconds;
     }
-    document.getElementById("runtime").innerHTML = diffYears + "年" + diffDays + "日" + diffHours + "小时" + diffMinutes + "分钟" + diffSeconds + "秒";
+    document.getElementById(elementId).innerHTML = diffYears + "年" + diffDays + "日" + diffHours + "小时" + diffMinutes + "分钟" + diffSeconds + "秒";
 }
-setInterval("showRuntime('02/11/2020 20:02:02')", 1000);
+setInterval("showRuntime('02/11/2020 20:02:02', 'runtime')", 1000);
